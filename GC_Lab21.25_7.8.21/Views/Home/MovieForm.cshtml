@@ -1,0 +1,52 @@
+﻿
+@model Movie
+
+@{
+    ViewData["Title"] = "Movie Registration Form";
+    
+    }
+
+<h4>Movie Registration Form</h4>
+<br/>
+
+<form action="DisplayMovie" method="post" class="form-horizontal">
+   
+
+        <label asp-for="Id">Id: </label>
+        <input type="number" asp-for="Id" class="control-label" value="@Model.Id" />
+        <br />
+
+        <label asp-for="Title"></label>
+        <input type="text" asp-for="Title" class="control-label" value="@Model.Title" />
+        <br />
+
+
+        <label for="Genre">Genre:</label>
+
+        <select asp-for="Genre" id="Genre">
+            <option value="Horror">Horror</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Drama">Drama</option>
+            <option value="Sci-fi">Sci-fi</option>
+            <option value="Romance">Romance</option>
+        </select>
+        <br />
+
+        <label asp-for="Year"></label>
+        <input type="number" min="1880" max="2021" class="control-label" asp-for="Year" value="@Model.Year" />
+        <br />
+
+        <label asp-for="Actors"></label>
+        <input type="text" class="form-control " asp-for="Actors" value="@Model.Actors" />
+        <br />
+
+        <label asp-for="Directors"></label>
+        <input type="text" class="form-control " asp-for="Directors" value="@Model.Directors" />
+        <br />
+        <br />
+       
+
+        <input type="submit" value="Submit" />
+
+
+</form>
